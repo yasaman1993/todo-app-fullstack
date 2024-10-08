@@ -7,7 +7,7 @@ function App() {
 
  
   useEffect(() => {
-    fetch("http://localhost:3000/api/todos")
+    fetch('https://todo-app-fullstack-znus.onrender.com/api/todos')
       .then((res) => {
         if (!res.ok) {
           throw new Error("Fehler beim Laden der Todos");
@@ -25,7 +25,7 @@ function App() {
   // Add a new Todo
   const handleAddTodo = () => {
     if (newTodo.trim()) {
-      fetch("http://localhost:3000/api/todos", {
+      fetch('https://todo-app-fullstack-znus.onrender.com/api/todos', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ function App() {
 
   // Delete a Todo
   const handleDeleteTodo = (id) => {
-    fetch(`http://localhost:3000/api/todos/${id}`, {
+    fetch(`https://todo-app-fullstack-znus.onrender.com/api/todos/${id}`, {
       method: "DELETE",
     })
       .then(() => {
@@ -59,7 +59,7 @@ function App() {
     // Find the Todo to toggle
     const todoToUpdate = todos.find((todo) => todo.id === id);
 
-    fetch(`http://localhost:3000/api/todos/${id}`, {
+    fetch(`https://todo-app-fullstack-znus.onrender.com/api/todos/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
